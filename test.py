@@ -1,0 +1,20 @@
+import requests
+
+BASE = "http://127.0.0.1:5000/"
+response = requests.put(BASE + "Song/111112", {"name":"xyz", "duration":111}) 
+# response = requests.put(BASE + "Podcast/11111", {"name":"xyz", "duration":111, "host":"pqr"}) 
+# response = requests.put(BASE + "Audiobook/11111", {"title":"xyz", "duration":111, "author":"abc", "narrator":"pqr"}) 
+response = requests.patch(BASE + "Song/111112", {"title":"xyz", "duration":111, "author":"abc", "narrator":"pqr"}) 
+# response = requests.patch(BASE + "Podcast/11111", {"title":"xyz", "duration":111, "author":"abc", "narrator":"pqr"}) 
+# response = requests.patch(BASE + "Audiobook/11111", {"title":"xyz", "duration":111, "author":"abc", "narrator":"pqr"})
+response = requests.get(BASE + "Song/111112")
+# response = requests.get(BASE + "Podcast/11111")
+# response = requests.get(BASE + "Audiobook/11111")
+response = requests.get(BASE + "Song")
+# response = requests.get(BASE + "Podcast")
+# response = requests.get(BASE + "Audiobook")
+print(response.json())
+print(response.status_code)
+response = requests.delete(BASE + "Song/111112")
+# response = requests.delete(BASE + "Podcast/1111")
+# response = requests.delete(BASE + "Audiobook/1111")
